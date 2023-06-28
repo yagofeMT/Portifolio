@@ -1,0 +1,44 @@
+.building {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vmin;
+    width: 20vmin;
+    padding: 5rem 0 0 0;
+    
+    .aerial {
+        border-bottom: 10vmin solid #3a5473;
+        border-left: 2vmin solid transparent;
+        border-right: 2vmin solid transparent;
+        position: relative;
+        top: 1vmin;
+    }
+
+    .circle {
+        background: #3a5473;
+        height: 4vmin;
+        width: 10vmin;
+        border-radius: 9vmin 9vmin 0 0;
+    }
+
+    .build {
+        background-color: #3a5473;
+        height: 100%;
+        width: 20vmin;
+        padding: 5vmin 2vmin;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .window {
+            width: 6vmin;
+            height: 5vmin;
+            margin: 0 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: var(--background-dark-building-window-color);
+        }
+    }
+}

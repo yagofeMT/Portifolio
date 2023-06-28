@@ -1,0 +1,110 @@
+.navigation_menu {
+    padding: 1.875rem var(--padding-content);
+    width: 100%;
+    background-color: var(--background-dark-header);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+    border-bottom: 1px solid var(--border-dark);
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 4.28rem;
+        color: var(--white);
+
+        li {
+            font-weight: 600;
+
+            &:hover {
+                filter: brightness(0.6);
+            }
+        }
+    }
+
+    [id="icons"] {
+        display: flex;
+        gap: 0.9375rem;
+        margin-left: auto;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
+    button {
+        background-color: transparent;
+        display: none;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navigation_menu.expanded {
+        background: var(--background-dark-header);
+        ul {
+            animation: growDown 500ms ease-out normal;
+            transform-origin: top center;
+            display: flex;
+            position: absolute;
+            left: 0;
+            perspective: 1000px;
+            padding: 2rem 0rem;
+            background: var(--background-dark-header);
+        }
+    }
+
+    .navigation_menu {
+        padding: 1.875rem 2rem;
+
+        ul {
+            display: none;
+            position: absolute;
+            top: 90px;
+            left: 0;
+            flex-direction: column;
+            width: 20%;
+            background-color: var(--background-dark-header);
+            border-bottom-right-radius: 10px;
+            align-items: center;
+
+            li {
+                text-align: center;
+                margin: 0;
+                color: var(--white);
+                padding: 0 0 1rem 0;
+                width: 100%;
+                &:hover {
+                    filter: brightness(0.7);
+                }
+            }
+        }
+        justify-content: space-evenly;
+
+        button {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .navigation_menu {
+        ul {
+            top: 87px;
+        }
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0);
+    }
+    80% {
+        transform: scaleY(1.1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
